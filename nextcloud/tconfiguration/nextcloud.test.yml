@@ -1,0 +1,22 @@
+http:
+  routers:
+    nextcloud:
+      rule: "Host(`nx.{domain}`)"
+      entrypoints:
+        - "web"
+      service: nextcloud
+      middlewares:
+        - nextcloud-secure-headers
+
+  services:
+    nextcloud:
+      loadBalancer:
+        servers:
+          - url: "http://nextcloud-aio-apache:11000"
+
+  middlewares:
+    nextcloud-secure-headers:
+      headers:
+        hostsProxyHeaders:
+          - "X-Forwarded-Host"
+        referrerPolicy: "same-origin"
