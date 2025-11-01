@@ -17,7 +17,7 @@ services:
       - ./configurations:/configurations:ro
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.traefik-dashboard.rule=Host(`{domain}`)"
+      - "traefik.http.routers.traefik-dashboard.rule=Host(`traefik.{domain}`)"
       - "traefik.http.routers.traefik-dashboard.service=api@internal"
       - "traefik.http.routers.traefik-dashboard.tls=true"
       - "traefik.http.routers.traefik-dashboard.tls.certresolver=letsencrypt"
