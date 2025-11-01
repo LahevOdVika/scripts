@@ -1,0 +1,21 @@
+api:
+  dashboard: true
+
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  docker:
+    exposedByDefault: false
+  file:
+    directory: /configurations
+    watch: true
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: "{email}"
+      storage: "acme.json"
+      httpChallenge:
+        entryPoint: web
