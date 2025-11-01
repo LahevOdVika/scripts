@@ -1,7 +1,7 @@
 http:
   routers:
     nextcloud:
-      rule: "Host(`{domain}`)"
+      rule: "Host(`nx.{domain}`)"
       entrypoints:
         - "websecure"
       service: nextcloud
