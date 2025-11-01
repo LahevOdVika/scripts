@@ -22,7 +22,7 @@ services:
       - "traefik.http.routers.traefik-dashboard.tls=true"
       - "traefik.http.routers.traefik-dashboard.tls.certresolver=letsencrypt"
       - "traefik.http.routers.traefik-dashboard.middlewares=auth"
-      - "traefik.http.middlewares.auth.basicauth.users={username}:{password}"
+      - "traefik.http.middlewares.auth.basicauth.users={string}"
 networks:
   web:
     external: true
