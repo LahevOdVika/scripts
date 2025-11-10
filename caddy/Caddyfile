@@ -1,0 +1,16 @@
+https://nx.lahevodvika.eu:443 {
+    header Strict-Transport-Security max-age=31536000;
+    reverse_proxy nextcloud-aio-apache:11000
+}
+
+https://kuma.lahevodvika.eu:443 {
+    reverse_proxy uptime-kuma:3001
+}
+
+https://ntfy.lahevodvika.eu:443 {
+    reverse_proxy ntfy:80
+}
+
+https://penpot.lahevodvika.eu:443 {
+    reverse_proxy penpot-penpot-frontend-1:8080
+}
